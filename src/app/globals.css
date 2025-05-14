@@ -2,217 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #090909;
-  --foreground: #f1f1f1;
-  --primary: #8b5cf6;
-  --primary-dark: #6d28d9;
-  --primary-light: #a78bfa;
-  --accent: #c084fc;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-primary-dark: var(--primary-dark);
-  --color-primary-light: var(--primary-light);
-  --color-accent: var(--accent);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  position: relative;
-}
-
-/* Background noise texture */
-.bg-noise {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
-  opacity: 0.05;
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Subtle grid pattern */
-.bg-grid {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(139, 92, 246, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
-  z-index: -2;
-  pointer-events: none;
-}
-
-/* Spotlight effect */
-.spotlight-container {
-  position: relative;
-  overflow: hidden;
-}
-
-.spotlight {
-  position: absolute;
-  top: -50%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120vw;
-  height: 100vh;
-  background: radial-gradient(
-    circle at center,
-    rgba(139, 92, 246, 0.15) 0%,
-    rgba(139, 92, 246, 0.05) 25%,
-    rgba(139, 92, 246, 0.01) 50%,
-    transparent 70%
-  );
-  pointer-events: none;
-  z-index: -1;
-}
-
-.spotlight-bottom {
-  position: absolute;
-  bottom: -50vh;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120vw;
-  height: 100vh;
-  background: radial-gradient(
-    circle at center,
-    rgba(139, 92, 246, 0.1) 0%,
-    rgba(139, 92, 246, 0.03) 25%,
-    rgba(139, 92, 246, 0.01) 50%,
-    transparent 70%
-  );
-  pointer-events: none;
-  z-index: -1;
-}
-
-/* Gradient overlay for dark backgrounds */
-.bg-texture {
-  background-image: 
-    radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.12), transparent 60%),
-    radial-gradient(circle at 100% 0%, rgba(192, 132, 252, 0.1), transparent 40%);
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Sphere effect */
-.sphere-effect {
-  background: radial-gradient(circle at 50% 50%, 
-    rgba(139, 92, 246, 0.8), 
-    rgba(109, 40, 217, 0.4) 60%, 
-    rgba(76, 29, 149, 0.2) 80%);
-  box-shadow: 
-    0 0 60px rgba(139, 92, 246, 0.3),
-    0 0 100px rgba(76, 29, 149, 0.2);
-  border-radius: 50%;
-}
-
-.glass-card {
-  background: rgba(20, 20, 20, 0.4);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(139, 92, 246, 0.1);
-  border-radius: 16px;
-  transition: all 0.3s ease;
-}
-
-.glass-card:hover {
-  background: rgba(20, 20, 20, 0.6);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 0 20px rgba(139, 92, 246, 0.1);
-}
-
-.text-gradient {
-  background: linear-gradient(to right, var(--primary-light), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Carpet texture */
-.carpet-texture {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill-rule='evenodd' d='M1 3h1v1H1V3zm2-2h1v1H3V1z' fill='%238b5cf6' fill-opacity='0.05'/%3E%3C/svg%3E");
-  opacity: 0.2;
-  z-index: -3;
-  pointer-events: none;
-}
-
-/* Light rays effect for hero section */
-.light-rays {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-  opacity: 0.04;
-  pointer-events: none;
-}
-
-.light-rays::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 150%;
-  height: 150%;
-  background: conic-gradient(
-    from 90deg at 50% 0%, 
-    transparent 0deg, 
-    rgba(139, 92, 246, 1) 10deg,
-    transparent 20deg,
-    transparent 80deg,
-    rgba(139, 92, 246, 1) 90deg,
-    transparent 100deg,
-    transparent 160deg,
-    rgba(139, 92, 246, 1) 170deg,
-    transparent 180deg,
-    transparent 250deg,
-    rgba(139, 92, 246, 1) 260deg,
-    transparent 270deg,
-    transparent 340deg,
-    rgba(139, 92, 246, 1) 350deg,
-    transparent 360deg
-  );
-  transform: translateX(-50%) translateY(-30%);
-}
-
-/* Glow effects */
-.glow-effect {
-  position: relative;
-}
-
-.glow-effect::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: inherit;
-  box-shadow: 0 0 40px rgba(139, 92, 246, 0.2);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.glow-effect:hover::after {
-  opacity: 1;
+    --token-d96b7449-cae7-4cc6-bfb2-11bf61bc3a2c: rgb(255, 255, 255);
+    --token-90009f0d-1dfe-4745-8bcd-4da680617d75: rgb(255, 239, 212);
+    --token-e8656d29-b39b-46b2-b769-e5756ee8643c: rgb(59, 59, 59);
+    --token-cccd0bff-14ea-4f9e-b27d-1a6e98a0a662: rgb(0, 0, 0);
+    --token-23f4807e-2c5e-45d2-8e0b-2edac7d7ee50: rgb(103, 17, 194);
+    --token-bc3a90d8-c0d4-4c0e-a9f0-f58c9c00d476: rgb(169, 77, 255);
+    --token-cf4a0ed7-d641-4dce-b3a2-a21e3c26e593: rgb(216, 186, 245);
+    --token-c93d57e4-6e34-4a0f-a81c-1ad4bec461fd: rgb(18, 18, 18);
+    --token-119baad6-7e88-46c9-85cb-186b0514575e: rgba(158, 158, 158, .16);
+    --token-46b64783-4170-4eb8-b06a-5c91423bb67d: rgb(10, 10, 10);
+    --token-d78b46ee-8204-4e28-96cf-cf92b88d3d9b: rgb(0, 0, 0);
+    --token-88e43fb9-0add-463b-a66e-bb42cefae826: rgb(253, 140, 61);
+    --token-731fec86-647e-439a-b806-afac51b14833: rgba(255, 255, 255, .9);
+    --token-c46ba434-1ced-4b59-87af-2a7d1fe743f9: rgba(255, 255, 255, .5);
+    --token-db77dfb2-40af-4ea5-9652-6ae35ec05115: rgba(158, 158, 158, .16);
+    --token-bd6feee2-1803-4489-9294-ed51d4c0f341: rgb(10, 10, 10);
+    --token-4ab21793-1df9-4066-8fc3-c7aeff77d35e: rgb(0, 0, 0);
+    --token-5d5e7bf2-809a-4673-b715-b38000f8b82c: rgba(158, 158, 158, .16);
+    --token-8ace2953-72ad-4ba7-902b-9587a6a705b2: rgb(10, 10, 10);
+    --token-241486d5-3298-4b06-b25b-9cf4c941394c: rgb(0, 0, 0);
+    --token-b18bb674-af19-45cb-a872-5cf99fb99893: rgb(30, 26, 28);
+    --token-ab7cbed8-14c5-4016-8d8b-eec68f032345: rgb(54, 52, 53);
+    --token-ac96d51d-e916-4a4c-9b51-ebda6bb47cce: rgb(188, 189, 191);
+    --token-7435e88f-7110-4a41-b5c5-15c94bce816a: rgb(30, 26, 28);
+    --token-51fc5e61-2902-4bba-9459-7fc18ea1e36e: rgb(255, 255, 255);
+    --token-1b2e0159-3150-4d5b-8c9d-596d96b64233: rgb(128, 128, 128);
 }
