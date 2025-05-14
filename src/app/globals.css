@@ -31,3 +31,8 @@ body {
     --token-51fc5e61-2902-4bba-9459-7fc18ea1e36e: rgb(255, 255, 255);
     --token-1b2e0159-3150-4d5b-8c9d-596d96b64233: rgb(128, 128, 128);
 }
+@layer utilities {
+  .shadow-glow {
+    text-shadow: 0 0 8px rgba(236, 72, 153, 0.6);
+  }
+}

@@ -11,7 +11,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "DevSomeware | Development that scales",
+  title: "SaaS DevSomeware",
   description: "On-demand development and API integration with senior level engineers",
   keywords: "SaaS development, API integration, web development, software engineering",
 };
