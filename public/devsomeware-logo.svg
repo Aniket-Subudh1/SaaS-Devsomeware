@@ -1,0 +1,35 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a78bfa" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <rect x="0" y="0" width="128" height="128" fill="none" />
+  
+  <!-- Stylized "D" shape -->
+  <path 
+    d="M30 25 L80 25 A30 30 0 0 1 80 103 L30 103 Z" 
+    fill="url(#purpleGradient)"
+    filter="url(#glow)"
+  />
+  
+  <!-- Code bracket elements -->
+  <path 
+    d="M95 40 L115 64 L95 88" 
+    stroke="#a78bfa" 
+    stroke-width="6" 
+    fill="none" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+  />
+  
+  <!-- Inner coding element -->
+  <rect x="40" y="55" width="30" height="6" rx="3" fill="#f3f4f6" />
+  <rect x="40" y="67" width="20" height="6" rx="3" fill="#f3f4f6" />
+</svg>
