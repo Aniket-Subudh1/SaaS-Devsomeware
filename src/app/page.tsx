@@ -235,7 +235,7 @@ const Page = () => {
         {/* SVG Overlay with mask image for spotlight effect - hide on small screens */}
         <div 
           ref={overlayRef}
-          className="hidden md:block absolute top-0 right-0 w-1/2 h-full z-10"
+          className="hidden md:block absolute top-0 right-32 w-1/2 h-full z-10"
           onMouseMove={handleMouseMove}
         >
           {/* This is the masked image that creates the spotlight effect */}
@@ -263,17 +263,18 @@ const Page = () => {
 
         {/* Hero Content */}
         <div className="relative z-10 container mx-auto px-4 sm:px-6 md:px-8 lg:px-[170px] h-full flex flex-col justify-center">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4">
-            Everything App<br />
-            for your teams
-          </h1>
-          <p className="text-lg sm:text-xl text-white/80 max-w-xs sm:max-w-sm md:max-w-lg mb-6 sm:mb-8">
-            Huly, an open-source platform, serves as an all-in-one 
-            replacement of Linear, Jira, Slack, and Notion.
-          </p>
-          <Link href="/try-it-free" className="inline-block bg-gradient-to-r from-pink-500 to-orange-500 hover:brightness-110 transition-all px-6 sm:px-8 py-3 rounded-full text-white font-medium w-fit text-sm sm:text-base">
-            TRY IT FREE →
-          </Link>
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4">
+  The Ultimate Hub<br />
+  for SaaS
+</h1>
+<p className="text-lg sm:text-xl text-white/80 max-w-xs sm:max-w-sm md:max-w-lg mb-6 sm:mb-8">
+  DevSomeware SaaS is your all-in-one solution for<br />
+  managing and optimizing your software as a service<br />
+</p>
+<Link href="/try-it-free" className="inline-block bg-gradient-to-r from-pink-500 to-orange-500 hover:brightness-110 transition-all px-6 sm:px-8 py-3 rounded-full text-white font-medium w-fit text-sm sm:text-base">
+  TRY IT FREE →
+</Link>
+
         </div>
       </div>
     </div>
