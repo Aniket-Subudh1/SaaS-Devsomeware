@@ -6,7 +6,7 @@ import {Navbar} from '@/components/Navbar'
 
 const page = () => {
   return (
-    <div className='token'>
+    <div className='-mt-24'>
       <Navbar />
       <Image 
         src="/hh.avif"

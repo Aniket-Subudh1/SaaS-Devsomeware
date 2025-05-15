@@ -59,9 +59,9 @@ export const Navbar = () => {
           <Image
             src={Logo}
             alt="DWS Logo"
-            width={40}
-            height={40}
-            className="relative z-10"
+            width={120}
+            height={120}
+            className="relative z-10 object-contain h-12 w-auto"
           />
         </Link>
         
