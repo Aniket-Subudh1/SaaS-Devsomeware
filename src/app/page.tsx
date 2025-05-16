@@ -191,14 +191,14 @@ const Page = () => {
       </AnimatePresence>
 
       {/* Hero Video */}
-      <div className="relative h-screen ">
+      <div className="relative h-screen overflow-x-hidden ">
         
        <video 
   autoPlay 
   loop 
   muted 
   playsInline
-  className="absolute top-0 left-0 -ml-32 md:ml-0 max-w-[850px] sm:max-w-[900px] md:max-w-[1700px] lg:w-full  sm:mt-0 md:mt-0 lg:mt-0 mt-[30px] h-[900px] sm:h-[1200px] lg:h-[1500px] object-fill sm:object-cover md:object-fill lg:object-cover z-0"
+  className="absolute top-0 left-0 -ml-28 md:ml-0 max-w-[600px] sm:max-w-[900px] md:max-w-[1700px] lg:w-full  sm:mt-0 md:mt-0 lg:mt-0 mt-[30px] h-[800px] sm:h-[1200px] lg:h-[1500px] object-fill sm:object-cover md:object-fill lg:object-cover z-0"
 >
   <source src="/hero.mp4" type="video/mp4" />
   Your browser does not support the video tag.
