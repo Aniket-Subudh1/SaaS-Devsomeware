@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, Home, Package, Info, Mail } from 'lucide-react';
 import Image from "next/image";
@@ -7,8 +7,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 const Page = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const overlayRef = useRef<HTMLDivElement | null>(null);
-  const [maskPosition, setMaskPosition] = useState({ x: 50, y: 50 });
   
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -25,19 +23,7 @@ const Page = () => {
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
-
-  // Track mouse position for the mask effect
-  const handleMouseMove = (e) => {
-    if (!overlayRef.current) return;
-    
-    const rect = overlayRef.current.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    
-    // Update the mask position
-    setMaskPosition({ x, y });
-  };
-
+ 
   // Animation variants for mobile menu
   const menuVariants = {
     closed: {
@@ -205,21 +191,22 @@ const Page = () => {
       </AnimatePresence>
 
       {/* Hero Video */}
-      <div className="relative w-full h-screen">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          className="absolute top-0 left-0 min-h-full w-full h-[1500px] object-cover md:object-cover z-0"
-        >
-          <source src="/hero.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+      <div className="relative h-screen ">
+        
+       <video 
+  autoPlay 
+  loop 
+  muted 
+  playsInline
+  className="absolute top-0 left-0 -ml-32 md:ml-0 max-w-[850px] sm:max-w-[900px] md:max-w-[1700px] lg:w-full  sm:mt-0 md:mt-0 lg:mt-0 mt-[30px] h-[900px] sm:h-[1200px] lg:h-[1500px] object-fill sm:object-cover md:object-fill lg:object-cover z-0"
+>
+  <source src="/hero.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
         
         {/* Large Brand Logo Overlay with animation - responsive positioning */}
         <motion.div
-          className="hidden sm:block absolute  mr-24 top-1/4 sm:right-10 transform -translate-y-1/2 w-1/3 sm:w-1/4 max-w-xs z-20 opacity-40 sm:opacity-40"
+          className="hidden sm:block absolute sm:mr-5 mr-24 top-1/4 sm:right-10 transform -translate-y-1/2 w-1/3 sm:w-1/4 max-w-xs z-20 opacity-40 sm:opacity-40"
           variants={logoVariants}
           animate="animate"
         >
@@ -231,50 +218,20 @@ const Page = () => {
             className="w-full h-auto object-contain"
           />
         </motion.div>
-        
-        {/* SVG Overlay with mask image for spotlight effect - hide on small screens */}
-        <div 
-          ref={overlayRef}
-          className="hidden md:block absolute top-0 right-32 w-1/2 h-full z-10"
-          onMouseMove={handleMouseMove}
-        >
-          {/* This is the masked image that creates the spotlight effect */}
-          <div 
-            className="relative w-full h-full"
-            style={{
-              // Set a CSS variable that we can use in the mask
-              "--mask-x": `${maskPosition.x}%`,
-              "--mask-y": `${maskPosition.y}%`,
-            } as React.CSSProperties}
-          >
-            <Image
-              src="/ih.svg"
-              width={1000}
-              height={1000}
-              alt="Feature overlay"
-              className="absolute z-10 w-full h-full object-cover opacity-0 hover:opacity-100 transition-opacity"
-              style={{
-                maskImage: 'radial-gradient(circle 400px at var(--mask-x) var(--mask-y), black 20%, transparent 80%)',
-                WebkitMaskImage: 'radial-gradient(circle 400px at var(--mask-x) var(--mask-y), black 20%, transparent 80%)',
-              }}
-            />
-          </div>
-        </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 md:px-8 lg:px-[170px] h-full flex flex-col justify-center">
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4">
-  The Ultimate Hub<br />
-  for SaaS
-</h1>
-<p className="text-lg sm:text-xl text-white/80 max-w-xs sm:max-w-sm md:max-w-lg mb-6 sm:mb-8">
-  DevSomeware SaaS is your all-in-one solution for<br />
-  managing and optimizing your software as a service<br />
-</p>
-<Link href="/try-it-free" className="inline-block bg-gradient-to-r from-pink-500 to-orange-500 hover:brightness-110 transition-all px-6 sm:px-8 py-3 rounded-full text-white font-medium w-fit text-sm sm:text-base">
-  TRY IT FREE →
-</Link>
-
+        <div className="relative z-10 container mx-auto px-4 sm:ml-4 ml-0 sm:px-0 md:px-8 lg:px-[170px] h-full flex flex-col justify-center">
+          <h1 className="text-4xl -mt-64 sm:mt-0 md:mt-0 lg:mt-0 sm:text-5xl md:text-7xl font-bold text-white mb-4">
+            The Ultimate Hub<br />
+            for SaaS
+          </h1>
+          <p className="text-lg sm:text-xl text-white/80 max-w-xs sm:max-w-sm md:max-w-lg mb-6 sm:mb-8">
+            DevSomeware SaaS is your all-in-one solution for<br />
+            managing and optimizing your software as a service<br />
+          </p>
+          <Link href="/try-it-free" className="inline-block bg-gradient-to-r from-pink-500 to-orange-500 hover:brightness-110 transition-all px-6 sm:px-8 py-3 rounded-full text-white font-medium w-fit text-sm sm:text-base">
+            TRY IT FREE →
+          </Link>
         </div>
       </div>
     </div>
