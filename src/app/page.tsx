@@ -198,7 +198,7 @@ const Page = () => {
   loop 
   muted 
   playsInline
-  className="absolute top-0 left-0 -ml-28 md:ml-0 max-w-[600px] sm:max-w-[900px] md:max-w-[1700px] lg:max-w-[2100px]  sm:mt-0 md:mt-0 lg:mt-0 mt-[30px] h-[800px] sm:h-[1200px] lg:h-[1800px] object-fill sm:object-cover md:object-fill lg:object-cover z-0"
+  className="absolute top-0 left-0 -ml-28 md:ml-0 max-w-[650px] sm:max-w-[1100px] md:max-w-[1700px] lg:max-w-[1600px]  sm:mt-0 md:mt-0 lg:mt-0 mt-[30px] h-[800px] sm:h-[1200px] lg:h-[1500px] object-fill sm:object-cover md:object-fill lg:object-cover z-0"
 >
   <source src="/hero.mp4" type="video/mp4" />
   Your browser does not support the video tag.
@@ -220,12 +220,13 @@ const Page = () => {
         </motion.div>
 
         {/* Hero Content */}
-        <div className="relative z-10 container mx-auto px-4 sm:ml-4 ml-0 sm:px-0 md:px-8 lg:px-[170px] h-full flex flex-col justify-center">
-          <h1 className="text-4xl -mt-64 sm:mt-0 md:mt-0 lg:mt-0 sm:text-5xl md:text-7xl font-bold text-white mb-4">
-            The Ultimate Hub<br />
-            for SaaS
+        <div className="relative z-10 container  mx-auto px-4 sm:ml-4 ml-0 sm:px-0 md:px-8 lg:px-[170px] h-full flex flex-col justify-center">
+          <h1 className="text-3xl -mt-72 sm:mt-0 md:mt-0  lg:mt-0 sm:text-3xl md:text-4xl lg:text-7xl font-bold text-white mb-4">
+            SaaS-DSW<br />
+            Ultimate SaaS <br />
+            Solution<br />
           </h1>
-          <p className="text-lg sm:text-xl text-white/80 max-w-xs sm:max-w-sm md:max-w-lg mb-6 sm:mb-8">
+          <p className="text:lg lg:text-xl sm:text-sm text-white/80 max-w-xs sm:max-w-sm md:max-w-lg mb-6 sm:mb-8">
             DevSomeware SaaS is your all-in-one solution for<br />
             managing and optimizing your software as a service<br />
           </p>
