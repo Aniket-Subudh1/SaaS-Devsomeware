@@ -70,7 +70,7 @@ const Page = () => {
   return (
     <div className='-mt-24'>
       {/* Main Navbar */}
-      <header className="sticky top-0 left-0 w-full z-50 ">
+      <header className="sticky top-0 left-0 w-full z-50 backdrop-blur-md shadow-lg">
         <div className="container mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
@@ -191,14 +191,14 @@ const Page = () => {
       </AnimatePresence>
 
       {/* Hero Video */}
-      <div className="relative h-screen overflow-x-hidden ">
+      <div className="relative h-screen  overflow-x-hidden">
         
        <video 
   autoPlay 
   loop 
   muted 
   playsInline
-  className="absolute top-0 left-0 -ml-28 md:ml-0 max-w-[650px] sm:max-w-[1100px] md:max-w-[1700px] lg:max-w-[1600px]  sm:mt-0 md:mt-0 lg:mt-0 mt-[30px] h-[800px] sm:h-[1200px] lg:h-[1500px] object-fill sm:object-cover md:object-fill lg:object-cover z-0"
+  className="absolute top-0 left-0 -ml-28 md:-ml-48 lg:ml-0 max-w-[650px] overflow-clip sm:max-w-[1100px] md:max-w-[1500px] lg:max-w-[1900px]  sm:mt-0 md:mt-0 lg:mt-0 mt-[30px] h-[800px] sm:h-[1200px] lg:h-[1500px] object-fill sm:object-cover md:object-fill lg:object-cover z-0"
 >
   <source src="/hero.mp4" type="video/mp4" />
   Your browser does not support the video tag.
@@ -218,10 +218,11 @@ const Page = () => {
             className="w-full h-auto object-contain"
           />
         </motion.div>
-
+         
         {/* Hero Content */}
         <div className="relative z-10 container  mx-auto px-4 sm:ml-4 ml-0 sm:px-0 md:px-8 lg:px-[170px] h-full flex flex-col justify-center">
-          <h1 className="text-3xl -mt-72 sm:mt-0 md:mt-0  lg:mt-0 sm:text-3xl md:text-4xl lg:text-7xl font-bold text-white mb-4">
+         
+          <h1 className="text-3xl -mt-72 sm:mt-0 md:-mt-32  lg:mt-0 sm:text-3xl md:text-4xl lg:text-7xl font-bold text-white mb-4">
             SaaS-DSW<br />
             Ultimate SaaS <br />
             Solution<br />
@@ -233,7 +234,20 @@ const Page = () => {
           <Link href="/try-it-free" className="inline-block bg-gradient-to-r from-pink-500 to-orange-500 hover:brightness-110 transition-all px-6 sm:px-8 py-3 rounded-full text-white font-medium w-fit text-sm sm:text-base">
             TRY IT FREE →
           </Link>
+            <div className='absolute md:ml-[200px] -ml-2 lg:ml-[131px] lg:mt-[1150px] mt-[315px] z-50'>
+
+               <Image
+            src="/page.jpg"
+            alt="Brand Logo"
+            width={300}
+            height={400}
+            className="w-[345px] border-none rounded-lg lg:w-[1065px] lg:h-[700px] h-[290px] object-fill"
+
+          />
+            </div>
         </div>
+         
+        
       </div>
     </div>
   );
