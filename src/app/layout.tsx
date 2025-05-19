@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`h-full ${manrope.variable} overflow-hidden`}>
+    <html lang="en" className={`h-full ${manrope.variable} scroll-smooth`}>
       <body className={`bg-black text-white antialiased ${manrope.className}`}>
         {children}
       </body>
