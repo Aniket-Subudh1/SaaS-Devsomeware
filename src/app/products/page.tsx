@@ -485,10 +485,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                     {/* Metrics */}
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-4 text-sm">
-                            <div className="flex items-center gap-1 text-blue-500">
-                                <CalendarIcon className="size-4" />
-                                {project.projectDuration}
-                            </div>
+                            
                             <div className="flex items-center gap-1 text-purple-500">
                                 <UsersIcon className="size-4" />
                                 {project.teamSize}
