@@ -44,7 +44,7 @@ const CONTACT_INFO: ContactInfo[] = [
     {
         icon: MailIcon,
         title: "Email Us",
-        details: ["hello@devsomeware.com", "Response within 24hrs"],
+        details: ["team@devsomeware.com", "Response within 24hrs"],
         color: "text-blue-400",
         bgColor: "bg-blue-500/10"
     },
@@ -483,8 +483,8 @@ const ContactPage = () => {
                                         <MailIcon className="size-5 text-purple-400" />
                                         <div>
                                             <p className="font-medium">Email</p>
-                                            <a href="mailto:hello@devsomeware.com" className="text-sm text-muted-foreground hover:text-purple-400 transition-colors">
-                                                hello@devsomeware.com
+                                            <a href="mailto:team@devsomeware.com" className="text-sm text-muted-foreground hover:text-purple-400 transition-colors">
+                                                team@devsomeware.com
                                             </a>
                                         </div>
                                     </div>
