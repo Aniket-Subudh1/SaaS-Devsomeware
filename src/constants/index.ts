@@ -1,14 +1,16 @@
 import { base, heading } from "./fonts";
-import { PLANS } from "./plans";
+import {PACKAGE,CONSULTATION_PACKAGES,CONSULTATION_FAQ,CONSULTATION_SERVICES} from "./packages";
 import { NAV_LINKS } from "./links";
-import { SUPPORTED_LANGUAGES } from "./countries";
+import { TECH_STACK} from "./technologies";
 import { FEATURES } from "./features";
 
 export {
     base,
     heading,
-    PLANS,
+    type PACKAGE,
+    CONSULTATION_FAQ,CONSULTATION_SERVICES,
+    CONSULTATION_PACKAGES,
     NAV_LINKS,
-    SUPPORTED_LANGUAGES,
+    TECH_STACK,
     FEATURES,
 };

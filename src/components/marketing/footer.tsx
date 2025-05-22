@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Container from "../global/container";
 import Image from "next/image";
+
 const Footer = () => {
     return (
         <footer className="flex flex-col relative items-center justify-center border-t border-foreground/5 pt-16 pb-8 px-6 lg:px-8 w-full max-w-6xl mx-auto lg:pt-32">
@@ -16,11 +17,11 @@ const Footer = () => {
                                 height={32}
                             />
                             <span className="text-base md:text-lg font-medium text-foreground">
-                                SAAS DSW
+                                SaaS DevSomeware
                             </span>
                         </div>
                         <p className="text-muted-foreground mt-4 text-sm text-start">
-                            Build, ship, and scale custom SaaS products and features — faster than ever with a developer-focused platform.
+                            Enterprise-grade SaaS development platform. Build scalable applications with modern architecture, from MVP to enterprise scale.
                         </p>
                     </div>
                 </Container>
@@ -29,27 +30,27 @@ const Footer = () => {
                     <div className="md:grid md:grid-cols-2 md:gap-8">
                         <Container delay={0.1} className="h-auto">
                             <h3 className="text-base font-medium text-foreground">
-                                Platform
+                                Services
                             </h3>
                             <ul className="mt-4 text-sm text-muted-foreground space-y-4">
                                 <li className="mt-2">
                                     <Link href="#" className="link hover:text-foreground transition-all duration-300">
-                                        Feature-Based Delivery
+                                        SaaS Development
                                     </Link>
                                 </li>
                                 <li className="mt-2">
                                     <Link href="#" className="link hover:text-foreground transition-all duration-300">
-                                        Developer Dashboard
+                                        Multi-Tenant Architecture
                                     </Link>
                                 </li>
                                 <li className="mt-2">
                                     <Link href="#" className="link hover:text-foreground transition-all duration-300">
-                                        Workflow Automation
+                                        Cloud Infrastructure
                                     </Link>
                                 </li>
                                 <li className="mt-2">
                                     <Link href="#" className="link hover:text-foreground transition-all duration-300">
-                                        Deployment Tools
+                                        API Development
                                     </Link>
                                 </li>
                             </ul>
@@ -57,27 +58,27 @@ const Footer = () => {
                         <Container delay={0.2} className="h-auto">
                             <div className="mt-10 md:mt-0 flex flex-col">
                                 <h3 className="text-base font-medium text-foreground">
-                                    Use Cases
+                                    Solutions
                                 </h3>
                                 <ul className="mt-4 text-sm text-muted-foreground space-y-4">
                                     <li>
                                         <Link href="#" className="link hover:text-foreground transition-all duration-300">
-                                            SaaS Products
-                                        </Link>
-                                    </li>
-                                    <li className="mt-2">
-                                        <Link href="#" className="link hover:text-foreground transition-all duration-300">
-                                            Freelance Projects
-                                        </Link>
-                                    </li>
-                                    <li className="mt-2">
-                                        <Link href="#" className="link hover:text-foreground transition-all duration-300">
-                                            Client Portals
+                                            Enterprise SaaS
                                         </Link>
                                     </li>
                                     <li className="mt-2">
                                         <Link href="#" className="link hover:text-foreground transition-all duration-300">
                                             Startup MVPs
+                                        </Link>
+                                    </li>
+                                    <li className="mt-2">
+                                        <Link href="#" className="link hover:text-foreground transition-all duration-300">
+                                            Agency Partnerships
+                                        </Link>
+                                    </li>
+                                    <li className="mt-2">
+                                        <Link href="#" className="link hover:text-foreground transition-all duration-300">
+                                            Freelance Support
                                         </Link>
                                     </li>
                                 </ul>
@@ -92,17 +93,22 @@ const Footer = () => {
                             <ul className="mt-4 text-sm text-muted-foreground space-y-4">
                                 <li className="mt-2">
                                     <Link href="#" className="link hover:text-foreground transition-all duration-300">
-                                        Documentation
+                                        Tech Stack Guide
                                     </Link>
                                 </li>
                                 <li className="mt-2">
                                     <Link href="#" className="link hover:text-foreground transition-all duration-300">
-                                        Blog & Updates
+                                        Case Studies
                                     </Link>
                                 </li>
                                 <li className="mt-2">
                                     <Link href="#" className="link hover:text-foreground transition-all duration-300">
-                                        Community
+                                        Development Blog
+                                    </Link>
+                                </li>
+                                <li className="mt-2">
+                                    <Link href="#" className="link hover:text-foreground transition-all duration-300">
+                                        SaaS Best Practices
                                     </Link>
                                 </li>
                             </ul>
@@ -115,7 +121,12 @@ const Footer = () => {
                                 <ul className="mt-4 text-sm text-muted-foreground space-y-4">
                                     <li>
                                         <Link href="#" className="link hover:text-foreground transition-all duration-300">
-                                            Our Story
+                                            About DevSomeware
+                                        </Link>
+                                    </li>
+                                    <li className="mt-2">
+                                        <Link href="#" className="link hover:text-foreground transition-all duration-300">
+                                            Schedule Consultation
                                         </Link>
                                     </li>
                                     <li className="mt-2">
@@ -138,7 +149,7 @@ const Footer = () => {
             <Container delay={0.5} className="w-full relative mt-12 lg:mt-20">
                 <div className="mt-8 md:flex md:items-center justify-center footer w-full">
                     <p className="text-sm text-muted-foreground mt-8 md:mt-0">
-                        &copy; {new Date().getFullYear()} DevSomeware. All rights reserved.
+                        &copy; {new Date().getFullYear()} SaaS DevSomeware - A DevSomeware Company. All rights reserved.
                     </p>
                 </div>
             </Container>
