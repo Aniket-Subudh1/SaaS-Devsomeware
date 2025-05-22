@@ -1,6 +1,5 @@
 import { NAV_LINKS } from "@/constants";
 import Link from "next/link";
-import Icons from "../global/icons";
 import Wrapper from "../global/wrapper";
 import { Button } from "../ui/button";
 import MobileMenu from "./mobile-menu";

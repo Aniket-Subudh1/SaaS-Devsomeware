@@ -10,16 +10,16 @@ const Features = () => {
             <Container>
                 <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
                     <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium !leading-snug mt-6">
-                        Developer experience <br /> made <span className="font-subheading italic">effortless</span>
+                        SaaS development <br /> made <span className="font-subheading italic">scalable</span>
                     </h2>
                     <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
-                        DevSomeware streamlines your developer workflow with automation, collaboration tools, and deployment solutions — all in one place.
+                        SaaS DevSomeware empowers teams to build enterprise-grade applications with cloud-native architecture, automated deployments, and robust infrastructure — all integrated seamlessly.
                     </p>
                 </div>
             </Container>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 relative overflow-visible">
-
+                
                 {FEATURES.map((feature, index) => (
                     <Container key={feature.title} delay={0.1 + index * 0.1} className={cn(
                         "relative flex flex-col rounded-2xl lg:rounded-3xl bg-card border border-border/50 hover:border-border/100 transition-colors",

@@ -8,7 +8,7 @@ import { OrbitingCircles } from "../ui/orbiting-circles";
 
 const Hero = () => {
     return (
-        <div className="relative flex flex-col items-center justify-center w-full py-20">
+        <div className="relative flex flex-col items-center justify-center -mt-24  w-full py-20">
 
             <div className="absolute flex lg:hidden size-40 rounded-full bg-purple-500 blur-[10rem] top-0 left-1/2 -translate-x-1/2 -z-10"></div>
 

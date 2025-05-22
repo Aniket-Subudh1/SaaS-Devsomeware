@@ -8,32 +8,32 @@ import {
 
 export const FEATURES = [
     {
-        title: "Modular Feature Deployment",
-        description: "Ship your web apps as standalone, reusable features — ideal for scaling SaaS products or delivering custom client modules.",
+        title: "Multi-Tenant Architecture",
+        description: "Build scalable SaaS applications with enterprise-grade multi-tenancy, data isolation, and customizable tenant configurations out of the box.",
         icon: LayoutTemplateIcon,
         image: "/images/feature-one.svg",
     },
     {
-        title: "Freelance & Client Workspace",
-        description: "Manage all freelance and agency projects in one dashboard — including timelines, deliverables, and scoped features.",
+        title: "Enterprise SaaS Framework",
+        description: "Accelerate development with pre-built SaaS components including subscription management, user authentication, billing integration, and admin dashboards.",
         icon: BriefcaseIcon,
         image: "/images/feature-two.svg",
     },
     {
-        title: "Developer-First Workflow",
-        description: "Built for devs — with support for GitHub, Docker, CI/CD, and hot reload environments for every project or product sprint.",
+        title: "Cloud-Native Development",
+        description: "Leverage containerized microservices, Kubernetes orchestration, and automated CI/CD pipelines designed specifically for SaaS deployment at scale.",
         icon: Code2Icon,
         image: "/images/feature-three.svg",
     },
     {
-        title: "Infrastructure Made Easy",
-        description: "Provision, manage, and monitor backend services, databases, and APIs with no DevOps overhead — optimized for speed and reliability.",
+        title: "Managed Cloud Infrastructure",
+        description: "Deploy on auto-scaling cloud infrastructure with built-in monitoring, security compliance, and global CDN — no infrastructure management required.",
         icon: ServerCogIcon,
         image: "/images/feature-four.svg",
     },
     {
-        title: "Insightful Project Analytics",
-        description: "Understand how clients interact with delivered features, monitor performance, and optimize future deliverables with real usage data.",
+        title: "SaaS Performance Insights",
+        description: "Monitor tenant usage patterns, application performance, subscription metrics, and user engagement with comprehensive analytics tailored for SaaS businesses.",
         icon: BarChart4Icon,
         image: "/images/feature-five.svg",
     }
