@@ -63,8 +63,8 @@ const PrivacyPolicyPage = () => {
                                     <h2 className="text-2xl font-semibold text-foreground mb-4">5. Contact Us</h2>
                                     <p>
                                         If you have any questions about this Privacy Policy, please contact us at{" "}
-                                        <a href="mailto:hello@devsomeware.com" className="text-purple-400 hover:text-purple-300 underline">
-                                            hello@devsomeware.com
+                                        <a href="mailto:team@devsomeware.com" className="text-purple-400 hover:text-purple-300 underline">
+                                            team@devsomeware.com
                                         </a>
                                     </p>
                                 </section>
