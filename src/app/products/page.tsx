@@ -1,4 +1,4 @@
-
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import { StarIcon, UsersIcon, CalendarIcon, CodeIcon, DatabaseIcon, CloudIcon } from "lucide-react";
@@ -378,11 +378,26 @@ const ProductsPage = () => {
                                 Let&apos;s discuss how we can bring your vision to life with our expertise in building scalable SaaS solutions.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                                <Link href="#consultation">
-                                    <Button size="lg" variant="blue">
-                                        Start Your Project
+                                
+                                    <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                                <Button 
+                                    size="lg" 
+                                    variant="blue"
+                                    onClick={() => window.open('https://cal.com/devsomeware-jqvlc6/discovery-calls', '_blank', 'noopener,noreferrer')}
+                                    className="group"
+                                >
+                                    
+                                    <CalendarIcon className="size-4 mr-2" />
+                                    Start Your Project
+                                </Button>
+                                
+                                <Link href="/products">
+                                    <Button size="lg" variant="outline">
+                                        View Our Work
                                     </Button>
                                 </Link>
+                            </div>
+                                
                             </div>
                         </div>
                     </Container>

@@ -1,3 +1,4 @@
+"use client"
 import { NAV_LINKS } from "@/constants";
 import Link from "next/link";
 import Wrapper from "../global/wrapper";
@@ -38,9 +39,12 @@ const Navbar = () => {
 
                     <div className="flex items-center gap-4">
                         <Link href="#" className="hidden lg:block">
-                            <Button variant="blue">
-                                Get Started
-                            </Button>
+                            
+                                    <Button
+                                    variant="blue"
+                                    onClick={() => window.open('https://cal.com/devsomeware-jqvlc6/general-consultation', '_blank', 'noopener,noreferrer')} >
+                                   Get Started
+                                </Button>
                         </Link>
                         <MobileMenu />
                     </div>

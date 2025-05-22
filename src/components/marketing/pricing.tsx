@@ -2,9 +2,10 @@
 
 import { CONSULTATION_PACKAGES } from "@/constants";
 import { PACKAGE } from "@/constants/packages";
+import { CAL_LINKS } from "@/constants/calendar";
 import { cn } from "@/lib";
 import { AnimatePresence, motion } from "framer-motion";
-import { CheckIcon, CalendarIcon } from "lucide-react";
+import { CheckIcon, CalendarIcon, ExternalLinkIcon } from "lucide-react";
 import { useState } from "react";
 import Container from "../global/container";
 import { Button } from "../ui/button";
@@ -12,16 +13,26 @@ import { Button } from "../ui/button";
 type ConsultationType = "discovery" | "strategy";
 
 const Consultation = () => {
-
     const [consultationType, setConsultationType] = useState<ConsultationType>("discovery");
 
     const handleSwitch = () => {
         setConsultationType((prev) => (prev === "discovery" ? "strategy" : "discovery"));
     };
 
+    const handleBooking = (packageId: string) => {
+        let calLink: keyof typeof CAL_LINKS;
+        
+        if (packageId === "startup") {
+            calLink = consultationType === "discovery" ? "discovery" : "strategy";
+        } else {
+            calLink = consultationType === "discovery" ? "consultation" : "enterprise";
+        }
+        
+        window.open(CAL_LINKS[calLink], '_blank', 'noopener,noreferrer');
+    };
+
     return (
         <div className="relative flex flex-col items-center justify-center max-w-5xl py-20 mx-auto">
-
             <div className="flex flex-col items-center justify-center max-w-2xl mx-auto">
                 <Container>
                     <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
@@ -54,7 +65,12 @@ const Consultation = () => {
             <div className="grid w-full grid-cols-1 lg:grid-cols-2 pt-8 lg:pt-12 gap-4 lg:gap-6 max-w-4xl mx-auto">
                 {CONSULTATION_PACKAGES.map((package_item, idx) => (
                     <Container key={idx} delay={0.1 * idx + 0.2}>
-                        <Package key={package_item.id} package_item={package_item} consultationType={consultationType} />
+                        <Package 
+                            key={package_item.id} 
+                            package_item={package_item} 
+                            consultationType={consultationType}
+                            onBooking={() => handleBooking(package_item.id)}
+                        />
                     </Container>
                 ))}
             </div>
@@ -62,7 +78,15 @@ const Consultation = () => {
     );
 };
 
-const Package = ({ package_item, consultationType }: { package_item: PACKAGE, consultationType: ConsultationType }) => {
+const Package = ({ 
+    package_item, 
+    consultationType, 
+    onBooking 
+}: { 
+    package_item: PACKAGE, 
+    consultationType: ConsultationType,
+    onBooking: () => void
+}) => {
     return (
         <div className={cn(
             "flex flex-col relative rounded-2xl lg:rounded-3xl transition-all bg-background/ items-start w-full border border-foreground/10 overflow-hidden",
@@ -86,9 +110,17 @@ const Package = ({ package_item, consultationType }: { package_item: PACKAGE, co
                     {package_item.desc}
                 </p>
             </div>
+            
             <div className="flex flex-col items-start w-full px-4 py-2 md:px-8">
-                <Button size="lg" variant={package_item.title === "Enterprise Consultation" ? "blue" : "white"} className="w-full">
+                <Button 
+                    size="lg" 
+                    variant={package_item.title === "Enterprise Consultation" ? "blue" : "white"} 
+                    className="w-full group"
+                    onClick={onBooking}
+                >
+                    <CalendarIcon className="size-4 mr-2" />
                     {package_item.buttonText}
+                    <ExternalLinkIcon className="size-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Button>
                 <div className="h-8 overflow-hidden w-full mx-auto">
                     <AnimatePresence mode="wait">
@@ -109,6 +141,7 @@ const Package = ({ package_item, consultationType }: { package_item: PACKAGE, co
                     </AnimatePresence>
                 </div>
             </div>
+            
             <div className="flex flex-col items-start w-full p-5 mb-4 ml-1 gap-y-2">
                 <span className="text-base text-left mb-2">
                     What&apos;s included: 

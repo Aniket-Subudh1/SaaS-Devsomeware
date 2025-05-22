@@ -123,11 +123,11 @@ const PROJECT_TYPES = [
 ];
 
 const BUDGETS = [
-    "Under $5,000",
-    "$5,000 - $15,000", 
-    "$15,000 - $50,000",
-    "$50,000 - $100,000",
-    "Above $100,000",
+    "Under Rs.5,000",
+    "Rs.5,000 - Rs.15,000", 
+    "Rs.5,000 - Rs.50,000",
+    "Rs.50,000 - Rs.100,000",
+    "Above Rs.100,000",
     "Let's Discuss"
 ];
 
@@ -577,10 +577,16 @@ const ContactPage = () => {
                                     Join 50+ satisfied clients who have transformed their ideas into successful SaaS applications with DevSomeware.
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                                    <Button size="lg" className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white border-0">
-                                        <CalendarIcon className="size-4 mr-2" />
-                                        Schedule Free Consultation
-                                    </Button>
+                                    <Button 
+                                    size="lg" 
+                                    variant="blue"
+                                    onClick={() => window.open('https://cal.com/devsomeware-jqvlc6/general-consultation', '_blank', 'noopener,noreferrer')}
+                                    className="group"
+                                >
+                                    
+                                    <CalendarIcon className="size-4 mr-2" />
+                                    Start Your Project
+                                </Button>
                                     <Link href="/about">
                                         <Button variant="outline" size="lg">
                                             Learn More About Us

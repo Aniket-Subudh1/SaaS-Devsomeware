@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+"use client"
 import Link from "next/link";
 import { 
     StarIcon, 
@@ -10,6 +10,7 @@ import {
     TargetIcon,
     LightbulbIcon,
     ShieldCheckIcon,
+    CalendarIcon,
     RocketIcon,
     InstagramIcon,
     TwitterIcon,
@@ -25,12 +26,9 @@ import { Button } from "@/components/ui/button";
 import { MagicCard } from "@/components/ui/magic-card";
 import { OrbitingCircles } from "@/components/ui/orbiting-circles";
 import Icons from "@/components/global/icons";
-import { generateMetadata } from "@/utils";
 
-export const metadata: Metadata = generateMetadata({
-    title: "About DevSomeware - Innovative SaaS Development Company",
-    description: "Discover the story behind DevSomeware, our mission to transform ideas into scalable SaaS solutions, and our expertise in educational technology and enterprise software development.",
-});
+
+
 
 interface SocialLink {
     name: string;
@@ -491,11 +489,18 @@ const AboutPage = () => {
                                 Let&apos;s collaborate to transform your ideas into powerful, scalable SaaS solutions that drive growth and innovation.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                                <Link href="#consultation">
-                                    <Button size="lg" variant="blue">
-                                        Start Your Project
-                                    </Button>
-                                </Link>
+                                
+                                 <Button 
+                                    size="lg" 
+                                    variant="blue"
+                                    onClick={() => window.open('https://cal.com/devsomeware-jqvlc6/discovery-calls', '_blank', 'noopener,noreferrer')}
+                                    className="group"
+                                >
+                                    
+                                    <CalendarIcon className="size-4 mr-2" />
+                                    Start Your Project
+                                </Button>
+                                
                                 <Link href="/products">
                                     <Button size="lg" variant="outline">
                                         View Our Work

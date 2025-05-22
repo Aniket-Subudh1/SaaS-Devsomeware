@@ -1,12 +1,17 @@
-import { ArrowRightIcon } from "lucide-react";
+"use client"
+import { ArrowRightIcon, CalendarIcon } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import Container from "../global/container";
 import Icons from "../global/icons";
 import { Button } from "../ui/button";
 import { OrbitingCircles } from "../ui/orbiting-circles";
+import { CAL_LINKS } from "@/constants/calendar";
 
 const Hero = () => {
+    const handleGetStartedClick = () => {
+        window.open(CAL_LINKS.discovery, '_blank', 'noopener,noreferrer');
+    };
+
     return (
         <div className="relative flex flex-col items-center justify-center -mt-24  w-full py-20">
 
@@ -71,12 +76,15 @@ const Hero = () => {
                     </Container>
                     <Container delay={0.25} className="z-20">
                         <div className="flex items-center justify-center mt-6 gap-x-4">
-                            <Link href="#" className="flex items-center gap-2 group">
-                                <Button size="lg">
-                                    Start Building Today
-                                    <ArrowRightIcon className="size-4 group-hover:translate-x-1 transition-all duration-300" />
-                                </Button>
-                            </Link>
+                            <Button 
+                                size="lg" 
+                                className="group"
+                                onClick={handleGetStartedClick}
+                            >
+                                <CalendarIcon className="size-4 mr-2" />
+                                Start Building Today
+                                <ArrowRightIcon className="size-4 ml-2 group-hover:translate-x-1 transition-all duration-300" />
+                            </Button>
                         </div>
                     </Container>
                     <Container delay={0.3} className="relative">

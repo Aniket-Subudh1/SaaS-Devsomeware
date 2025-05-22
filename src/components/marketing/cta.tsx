@@ -1,12 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { CalendarIcon } from "lucide-react";
 import Container from "../global/container";
 import { Button } from "../ui/button";
+import { CAL_LINKS } from "@/constants/calendar";
 import Particles from "../ui/particles";
 
 const CTA = () => {
+    const handleConsultationClick = () => {
+        window.open(CAL_LINKS.consultation, '_blank', 'noopener,noreferrer');
+    };
+
     return (
         <div className="relative flex flex-col items-center justify-center w-full py-20">
             <Container className="py-20 max-w-6xl mx-auto">
@@ -46,11 +51,14 @@ const CTA = () => {
                     <p className="text-sm md:text-lg text-center text-accent-foreground/80 max-w-2xl mx-auto mt-4">
                         Transform your ideas into scalable SaaS applications. Get expert development, modern architecture <span className="hidden lg:inline">and enterprise-grade solutions in weeks, not months.</span>
                     </p>
-                    <Link href="#consultation" className="mt-8">
-                        <Button size="lg">
-                            Schedule a consultation
-                        </Button>
-                    </Link>
+                    <Button 
+                        size="lg" 
+                        className="mt-8 group"
+                        onClick={handleConsultationClick}
+                    >
+                        <CalendarIcon className="size-4 mr-2" />
+                        Schedule a consultation
+                    </Button>
                 </div>
             </Container>
         </div>
