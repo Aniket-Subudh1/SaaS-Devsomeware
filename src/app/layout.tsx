@@ -112,7 +112,7 @@ export default function RootLayout({
                 <meta property="og:site_name" content={siteName} />
                 <meta property="og:locale" content="en_US" />
                 <meta property="og:url" content={appUrl} />
-                <meta property="og:image" content={`${appUrl}/page.jpg`} />
+                <meta property="og:image" content={`${appUrl}/kk.png`} />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
                 <meta property="og:image:alt" content="SaaS DevSomeware - Enterprise SaaS Development Platform" />
