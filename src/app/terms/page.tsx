@@ -27,7 +27,7 @@ const TermsOfServicePage = () => {
                                 <section>
                                     <h2 className="text-2xl font-semibold text-foreground mb-4">1. Acceptance of Terms</h2>
                                     <p>
-                                        By accessing and using DevSomeware's services, you accept and agree to be bound by 
+                                        By accessing and using DevSomeware&apos;s services, you accept and agree to be bound by 
                                         the terms and provision of this agreement.
                                     </p>
                                 </section>
@@ -71,8 +71,8 @@ const TermsOfServicePage = () => {
                                     <h2 className="text-2xl font-semibold text-foreground mb-4">6. Contact Information</h2>
                                     <p>
                                         For questions about these Terms of Service, contact us at{" "}
-                                        <a href="mailto:hello@devsomeware.com" className="text-purple-400 hover:text-purple-300 underline">
-                                            hello@devsomeware.com
+                                        <a href="mailto:team@devsomeware.com" className="text-purple-400 hover:text-purple-300 underline">
+                                            team@devsomeware.com
                                         </a>
                                     </p>
                                 </section>
