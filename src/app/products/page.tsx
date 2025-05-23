@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import { StarIcon, UsersIcon, CalendarIcon, CodeIcon, DatabaseIcon, CloudIcon } from "lucide-react";
+import { StarIcon, CalendarIcon, CodeIcon, DatabaseIcon, CloudIcon } from "lucide-react";
 import Container from "@/components/global/container";
 import Wrapper from "@/components/global/wrapper";
 import { Button } from "@/components/ui/button";
@@ -486,10 +486,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-4 text-sm">
                             
-                            <div className="flex items-center gap-1 text-purple-500">
-                                <UsersIcon className="size-4" />
-                                {project.teamSize}
-                            </div>
+
                         </div>
                     </div>
 
