@@ -21,13 +21,6 @@ const Companies = () => {
                         width={100}
                         height={100}
                        />
-                    <Image 
-                        src="/gt.png"
-                        alt="company logo"
-                        className="h-[500px]w-auto hover:text-foreground"
-                        width={200}
-                        height={200}
-                       />
                   
                 </div>
             </Container>
