@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 interface Props {
     className?: string;
-    children: React.ReactNode; // purple-400
+    children: React.ReactNode;
     delay?: number;
     reverse?: boolean;
     simple?: boolean;
