@@ -27,7 +27,8 @@ import {
     HeartIcon,
     LockIcon,
     Award,
-    Globe
+    Globe,
+    MessageCircleIcon
 } from "lucide-react";
 import Particles from "@/components/ui/particles";
 import Image from "next/image";
@@ -37,6 +38,12 @@ import { useState, useEffect } from "react";
 const LMSPage = () => {
     const handleDemoClick = () => {
         window.open(CAL_LINKS.consultation, '_blank', 'noopener,noreferrer');
+    };
+
+    const handleWhatsAppClick = () => {
+        const message = encodeURIComponent("Hi! I'm interested in your White-Label LMS solution. Could you please provide more information about pricing, features, and implementation timeline?");
+        const whatsappUrl = `https://wa.me/919777755776?text=${message}`;
+        window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     };
 
     const features = [
@@ -224,20 +231,30 @@ const LMSPage = () => {
                                     </p>
                                 </motion.div>
 
-                                {/* CTA Button */}
+                                {/* CTA Buttons */}
                                 <motion.div
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.6, delay: 0.2 }}
+                                    className="flex flex-col sm:flex-row gap-4"
                                 >
                                     <Button 
                                         size="lg" 
-                                        className="group bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 px-8 py-6 text-lg h-14"
+                                        className="group bg-purple-500 hover:bg-purple-600 px-8 py-6 text-lg h-14"
                                         onClick={handleDemoClick}
                                     >
                                         <CalendarIcon className="size-5 mr-2" />
                                         Schedule a Demo
                                         <ArrowRightIcon className="size-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                                    </Button>
+                                    <Button 
+                                        size="lg" 
+                                        variant="outline" 
+                                        className="px-8 py-6 text-lg h-14 border-purple-500/50 hover:bg-purple-500/10 text-purple-500 hover:text-purple-400"
+                                        onClick={handleWhatsAppClick}
+                                    >
+                                        <MessageCircleIcon className="size-5 mr-2" />
+                                        Chat with Us
                                     </Button>
                                 </motion.div>
 
@@ -419,7 +436,7 @@ const LMSPage = () => {
                                         </div>
 
                                         <Button 
-                                            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 h-12"
+                                            className="w-full bg-purple-500 hover:bg-purple-600 h-12"
                                             onClick={handleDemoClick}
                                         >
                                             <CalendarIcon className="size-4 mr-2" />
@@ -473,7 +490,7 @@ const LMSPage = () => {
                                         </div>
 
                                         <Button 
-                                            className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 h-12"
+                                            className="w-full bg-purple-500 hover:bg-purple-600 h-12"
                                             onClick={handleDemoClick}
                                         >
                                             <CalendarIcon className="size-4 mr-2" />
@@ -526,7 +543,7 @@ const LMSPage = () => {
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                                     <Button 
                                         size="lg" 
-                                        className="group bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-8 py-6 text-lg h-14"
+                                        className="group bg-purple-500 hover:bg-purple-600 px-8 py-6 text-lg h-14"
                                         onClick={handleDemoClick}
                                     >
                                         <CalendarIcon className="size-5 mr-2" />
@@ -572,6 +589,18 @@ const LMSPage = () => {
                     </Container>
                 </Wrapper>
             </section>
+
+            {/* Floating WhatsApp Button */}
+            <div className="fixed bottom-6 right-6 z-50">
+                <Button
+                    onClick={handleWhatsAppClick}
+                    className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 group"
+                    size="lg"
+                >
+                    <MessageCircleIcon className="size-6 group-hover:scale-110 transition-transform" />
+                    <span className="sr-only">Chat on WhatsApp</span>
+                </Button>
+            </div>
         </div>
     );
 };
