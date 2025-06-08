@@ -42,7 +42,7 @@ const LMSPage = () => {
 
     const handleWhatsAppClick = () => {
         const message = encodeURIComponent("Hi! I'm interested in your White-Label LMS solution. Could you please provide more information about pricing, features, and implementation timeline?");
-        const whatsappUrl = `https://wa.me/919777755776?text=${message}`;
+        const whatsappUrl = `https://wa.me/917684974052?text=${message}`;
         window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     };
 
